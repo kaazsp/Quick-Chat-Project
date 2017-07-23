@@ -24,20 +24,12 @@ import android.widget.Toast;
 
 public class QuickActivity extends AppCompatActivity {
 
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
 
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
+    private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
+    private TextView tab1;
+    private TextView tab2;
+    private TextView tab3;
 
     final int[] ICONS = new int[]{
             R.drawable.ic_action_name,
@@ -73,31 +65,51 @@ public class QuickActivity extends AppCompatActivity {
         });
 
 
-        TextView tab1 = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+        tab1 = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tab1.setCompoundDrawablesWithIntrinsicBounds(0, ICONS[0], 0, 0);
         tabLayout.getTabAt(0).setCustomView(tab1);
-        tab1.setScaleX(1.5f);
-        tab1.setScaleY(1.5f);
+        tab1.setScaleX(1.0f);
+        tab1.setScaleY(1.0f);
 
-        TextView tab2 = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+        tab2 = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tab2.setCompoundDrawablesWithIntrinsicBounds(0, ICONS[1], 0, 0);
         tabLayout.getTabAt(1).setCustomView(tab2);
-        tab2.setScaleX(1.3f);
-        tab2.setScaleY(1.3f);
+        tab2.setScaleX(1.0f);
+        tab2.setScaleY(1.0f);
 
-        TextView tab3 = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+        tab3 = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tab3.setCompoundDrawablesWithIntrinsicBounds(0, ICONS[2], 0, 0);
         tabLayout.getTabAt(2).setCustomView(tab3);
-        tab3.setScaleX(1.5f);
-        tab3.setScaleY(1.5f);
+        tab3.setScaleX(1.0f);
+        tab3.setScaleY(1.0f);
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-
-
-                Toast.makeText(QuickActivity.this, "tabSelected:  " + tab.getPosition(), Toast.LENGTH_SHORT).show();
+                if(tab.getPosition() == 0){
+                    tab1.setScaleX(1.5f);
+                    tab1.setScaleY(1.5f);
+                    tab2.setScaleX(1.0f);
+                    tab2.setScaleY(1.0f);
+                    tab3.setScaleX(1.0f);
+                    tab3.setScaleY(1.0f);
+                }else if(tab.getPosition() == 1){
+                    tab1.setScaleX(1.0f);
+                    tab1.setScaleY(1.0f);
+                    tab2.setScaleX(1.3f);
+                    tab2.setScaleY(1.3f);
+                    tab3.setScaleX(1.0f);
+                    tab3.setScaleY(1.0f);
+                }else if(tab.getPosition() == 2){
+                    tab1.setScaleX(1.0f);
+                    tab1.setScaleY(1.0f);
+                    tab2.setScaleX(1.0f);
+                    tab2.setScaleY(1.0f);
+                    tab3.setScaleX(1.5f);
+                    tab3.setScaleY(1.5f);
+                }
+                //Toast.makeText(QuickActivity.this, "tabSelected:  " + tab.getPosition(), Toast.LENGTH_SHORT).show();
                 mViewPager.setCurrentItem(tab.getPosition());
             }
 
@@ -108,7 +120,7 @@ public class QuickActivity extends AppCompatActivity {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-                Toast.makeText(QuickActivity.this, "tabReSelected:  " + tab.getText(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(QuickActivity.this, "tabReSelected:  " + tab.getText(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -137,41 +149,6 @@ public class QuickActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        public PlaceholderFragment() {
-        }
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_quick, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-
-            return rootView;
-        }
-    }
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -209,17 +186,6 @@ public class QuickActivity extends AppCompatActivity {
             return 3;
         }
 
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "";
-                case 1:
-                    return "SECTION 2";
-                case 2:
-                    return "SECTION 3";
-            }
-            return null;
-        }
+
     }
 }
