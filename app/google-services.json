@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "173593211374",
+    "firebase_url": "https://quick-chat-aa161.firebaseio.com",
+    "project_id": "quick-chat-aa161",
+    "storage_bucket": "quick-chat-aa161.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173593211374:android:f509b52f08089b66",
+        "android_client_info": {
+          "package_name": "com.example.kazz.quick_chat_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "173593211374-74jkvsfvj2mg14gea8gnbh0bqsv399t1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kazz.quick_chat_project",
+            "certificate_hash": "f138245b81fe64fbed826aebf59777cb37b3c60b"
+          }
+        },
+        {
+          "client_id": "173593211374-b5s7rhs613igkt3g0uvlsbn59e4irjvq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCazJXjBqdaK4J_pSm2zyjeZcrczAFmAdY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "173593211374-b5s7rhs613igkt3g0uvlsbn59e4irjvq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
