@@ -5,6 +5,7 @@ import android.os.Build;
 import android.graphics.Color;
 import android.media.MediaRecorder;
 import android.os.Environment;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -60,6 +61,19 @@ public class QuickActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quick);
+
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if (firebaseAuth.getCurrentUser() == null){
+                    startActivity(new Intent(QuickActivity.this, LoginActivity.class));
+                }
+            }
+        };
+
+        mAuth.addAuthStateListener(mAuthListener);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -162,20 +176,6 @@ public class QuickActivity extends AppCompatActivity {
                 }
                 //Toast.makeText(QuickActivity.this, "tabSelected:  " + tab.getPosition(), Toast.LENGTH_SHORT).show();
                 mViewPager.setCurrentItem(tab.getPosition(),false);
-
-                 mAuth.addAuthStateListener(mAuthListener);
-                mAuth = FirebaseAuth.getInstance();
-
-                mAuthListener = new FirebaseAuth.AuthStateListener() {
-                    @Override
-                    public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                        if (firebaseAuth.getCurrentUser() == null){
-                            startActivity(new Intent(QuickActivity.this, LoginActivity.class));
-                        }
-                    }
-                };
-
-
             }
 
             @Override
@@ -189,7 +189,6 @@ public class QuickActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
     @Override
@@ -204,6 +203,8 @@ public class QuickActivity extends AppCompatActivity {
 
         if (id == R.id.action_settings) {
             return true;
+        }else if (id == R.id.log_out){
+            mAuth.signOut();
         }
 
         return super.onOptionsItemSelected(item);
@@ -240,36 +241,6 @@ public class QuickActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-       // Log.i(getPackageName(), "onStart()");
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
 
-    }
-
-    @Override
-    protected void onResume() {
-        Log.i(getPackageName(), "onResume()");
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        Log.i(getPackageName(), "onPause()");
-        super.onPause();
-    }
-
-    @Override
-    protected void onStop() {
-        Log.i(getPackageName(), "onStop()");
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        Log.i(getPackageName(), "onDestroy()");
-        super.onDestroy();
-    }
 
 }

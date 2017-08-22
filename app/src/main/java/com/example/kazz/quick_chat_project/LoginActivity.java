@@ -61,45 +61,45 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        button = (SignInButton) findViewById(R.id.googleBtn);
 
         mAuth = FirebaseAuth.getInstance();
-        button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                signIn();
-            }
-        });
-
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     Toast.makeText(LoginActivity.this, "Logou!", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(LoginActivity.this, SecondOne.class));
+                    startActivity(new Intent(LoginActivity.this, QuickActivity.class));
 
                 } else {
-//                    Toast.makeText(LoginActivity.this, "Nao logou :/!", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(LoginActivity.this, "Nao logou :/!", Toast.LENGTH_SHORT).show();
                     Log.d("Tag", "onAuthStateChanged:signed_out");
                 }
             }
         };
 
+        button = (SignInButton) findViewById(R.id.googleBtn);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
-              .enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener() {
-                  @Override
-                  public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-                      Toast.makeText(LoginActivity.this, "deu ruim", Toast.LENGTH_SHORT).show();
-                  }
-              })
-             .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
-             .build();
+                .enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener() {
+                    @Override
+                    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+                        Toast.makeText(LoginActivity.this, "deu ruim", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                .build();
+
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                signIn();
+            }
+        });
     }
 
     public void signIn(){
@@ -117,9 +117,7 @@ public class LoginActivity extends AppCompatActivity {
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
             }
-            else{
-            //    Toast.makeText(this, "N logou", Toast.LENGTH_SHORT).show();
-            }
+
         }
 
     }
