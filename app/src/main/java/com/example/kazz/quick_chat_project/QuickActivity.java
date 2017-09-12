@@ -1,43 +1,44 @@
 package com.example.kazz.quick_chat_project;
 
+import android.content.Intent;
+import android.os.Build;
+import android.graphics.Color;
+import android.media.MediaRecorder;
+import android.os.Environment;
+import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-
-
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-
 import android.widget.TextView;
 import android.widget.Toast;
+import java.io.File;
+import java.io.IOException;
+import com.google.firebase.auth.FirebaseAuth;
+
 
 public class QuickActivity extends AppCompatActivity {
 
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
+    private static boolean AAC_SUPPORTED  = Build.VERSION.SDK_INT >= 10;
+    private MediaRecorder audioAAC;
+    private String outputFile, outputFile2;
+    private boolean rec = false;
     private SectionsPagerAdapter mSectionsPagerAdapter;
-
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
     private ViewPager mViewPager;
+    private TextView tab1;
+    private TextView tab2;
+    private TextView tab3;
 
     final int[] ICONS = new int[]{
             R.drawable.ic_action_name,
@@ -45,83 +46,153 @@ public class QuickActivity extends AppCompatActivity {
             R.drawable.ic_user
     };
 
+    private static final File FILES_PATH = new File(
+            Environment.getExternalStorageDirectory(),
+            "Android/data/com.soundcloud.android.examples/files");
+
+    private static final File RECORDING = new File(
+            FILES_PATH,
+            "demo-recording" + (AAC_SUPPORTED ? ".mp4" : "3gp"));
+
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quick);
 
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if (firebaseAuth.getCurrentUser() == null){
+                    startActivity(new Intent(QuickActivity.this, LoginActivity.class));
+                }
+            }
+        };
+
+        mAuth.addAuthStateListener(mAuthListener);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
-        // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        final TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+        tabLayout.setSelectedTabIndicatorColor(Color.TRANSPARENT);
+        outputFile2 = Environment.getExternalStorageDirectory().getAbsolutePath() + "/aud4.mp4";
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+     //   audioAAC = new MediaRecorder();
+    //    audioAAC.setAudioSource(MediaRecorder.AudioSource.MIC);
+    //    audioAAC.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+     //   audioAAC.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+     //   audioAAC.setAudioSamplingRate(44100);
+     //   audioAAC.setAudioEncodingBitRate(96000);
+      //  audioAAC.setAudioChannels(1);
+      //  audioAAC.setOutputFile(outputFile2);
+
+  /*      FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        fab.setOnLongClickListener(new View.OnLongClickListener(){
+
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public boolean onLongClick(View view) {
+                return false;
             }
         });
+*/
+       /* fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rec = !rec;
+                if (rec == true){
+                    try {
+                        audioAAC.prepare();
+                        audioAAC.start();
+                    } catch (IllegalStateException iser){ }
+                    catch (IOException ioe){}
 
+                    Toast.makeText(getApplicationContext(), "Iniciou da gravação!", Toast.LENGTH_LONG).show();
+                }
+                else if(rec == false){
+                    audioAAC.stop();
+                    audioAAC.release();
+                    Toast.makeText(getApplicationContext(), "Gravação salva!", Toast.LENGTH_LONG).show();
+                }
+            }
+        });*/
 
-        TextView tab1 = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+        tab1 = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tab1.setCompoundDrawablesWithIntrinsicBounds(0, ICONS[0], 0, 0);
         tabLayout.getTabAt(0).setCustomView(tab1);
-        tab1.setScaleX(1.5f);
-        tab1.setScaleY(1.5f);
+        tab1.setScaleX(1.0f);
+        tab1.setScaleY(1.0f);
 
-        TextView tab2 = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+        tab2 = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tab2.setCompoundDrawablesWithIntrinsicBounds(0, ICONS[1], 0, 0);
         tabLayout.getTabAt(1).setCustomView(tab2);
-        tab2.setScaleX(1.3f);
-        tab2.setScaleY(1.3f);
+        tab2.setScaleX(1.0f);
+        tab2.setScaleY(1.0f);
 
-        TextView tab3 = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+        tab3 = (TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
         tab3.setCompoundDrawablesWithIntrinsicBounds(0, ICONS[2], 0, 0);
         tabLayout.getTabAt(2).setCustomView(tab3);
-        tab3.setScaleX(1.5f);
-        tab3.setScaleY(1.5f);
+        tab3.setScaleX(1.0f);
+        tab3.setScaleY(1.0f);
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 
+                if(tab.getPosition() == 0){
 
-                Toast.makeText(QuickActivity.this, "tabSelected:  " + tab.getPosition(), Toast.LENGTH_SHORT).show();
-                mViewPager.setCurrentItem(tab.getPosition());
+                    tab1.animate().scaleX(1.5f).start();
+                    tab1.animate().scaleY(1.5f).start();
+                    tab2.animate().scaleX(1.0f).start();
+                    tab2.animate().scaleY(1.0f).start();
+                    tab3.animate().scaleX(1.0f).start();
+                    tab3.animate().scaleY(1.0f).start();
+
+                }else if(tab.getPosition() == 1){
+
+                    tab2.animate().scaleX(1.3f).start();
+                    tab2.animate().scaleY(1.3f).start();
+                    tab1.animate().scaleX(1.0f).start();
+                    tab1.animate().scaleY(1.0f).start();
+                    tab3.animate().scaleX(1.0f).start();
+                    tab3.animate().scaleY(1.0f).start();
+
+                }else if(tab.getPosition() == 2){
+
+                    tab1.animate().scaleX(1.0f).start();
+                    tab1.animate().scaleY(1.0f).start();
+                    tab2.animate().scaleX(1.0f).start();
+                    tab2.animate().scaleY(1.0f).start();
+                    tab3.animate().scaleX(1.5f).start();
+                    tab3.animate().scaleY(1.5f).start();
+                }
+                //Toast.makeText(QuickActivity.this, "tabSelected:  " + tab.getPosition(), Toast.LENGTH_SHORT).show();
+                mViewPager.setCurrentItem(tab.getPosition(),false);
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
 
+
             }
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-                Toast.makeText(QuickActivity.this, "tabReSelected:  " + tab.getText(), Toast.LENGTH_SHORT).show();
+
             }
         });
-
-
-
-
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_quick, menu);
         return true;
     }
@@ -132,51 +203,13 @@ public class QuickActivity extends AppCompatActivity {
 
         if (id == R.id.action_settings) {
             return true;
+        }else if (id == R.id.log_out){
+            mAuth.signOut();
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        public PlaceholderFragment() {
-        }
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_quick, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-
-            return rootView;
-        }
-    }
-
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -185,8 +218,6 @@ public class QuickActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position){
                 case 0:
                     Timeline timeline = new Timeline();
@@ -205,21 +236,11 @@ public class QuickActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
             return 3;
         }
 
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "";
-                case 1:
-                    return "SECTION 2";
-                case 2:
-                    return "SECTION 3";
-            }
-            return null;
-        }
     }
+
+
+
 }

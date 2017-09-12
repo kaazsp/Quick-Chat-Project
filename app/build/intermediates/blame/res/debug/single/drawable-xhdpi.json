@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_earth.png",
+        "source": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/src/main/res/drawable-xhdpi/ic_earth.png"
+    },
+    {
+        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_user.png",
+        "source": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/src/main/res/drawable-xhdpi/ic_user.png"
+    },
+    {
+        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_action_name.png",
+        "source": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/src/main/res/drawable-xhdpi/ic_action_name.png"
+    }
+]
