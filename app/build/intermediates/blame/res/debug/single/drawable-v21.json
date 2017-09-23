@@ -1,34 +1,34 @@
 [
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-v21/avd_hide_password.xml",
-        "source": "/home/victor/.android/build-cache/c1c88d24b89e37955d4b1362cdb66ceff3f4f4e6/output/res/drawable-v21/avd_hide_password.xml"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-v21/avd_hide_password.xml",
+        "source": "/home/kazz/.android/build-cache/42521d0d31b6bcf836917ee53c26e4dac7900778/output/res/drawable-v21/avd_hide_password.xml"
     },
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
-        "source": "/home/victor/.android/build-cache/8d302559992629dda1c646de04b9adfd83d9f0b4/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-v21/avd_show_password.xml",
+        "source": "/home/kazz/.android/build-cache/42521d0d31b6bcf836917ee53c26e4dac7900778/output/res/drawable-v21/avd_show_password.xml"
     },
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
-        "source": "/home/victor/.android/build-cache/8d302559992629dda1c646de04b9adfd83d9f0b4/output/res/drawable-v21/abc_btn_colored_material.xml"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/home/kazz/.android/build-cache/3116ca64b8702b327600c2afe229956fe4008e72/output/res/drawable-v21/abc_btn_colored_material.xml"
     },
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
-        "source": "/home/victor/.android/build-cache/8d302559992629dda1c646de04b9adfd83d9f0b4/output/res/drawable-v21/notification_action_background.xml"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/home/kazz/.android/build-cache/3116ca64b8702b327600c2afe229956fe4008e72/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml",
-        "source": "/home/victor/.android/build-cache/c1c88d24b89e37955d4b1362cdb66ceff3f4f4e6/output/res/drawable-v21/design_bottom_navigation_item_background.xml"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml",
+        "source": "/home/kazz/.android/build-cache/42521d0d31b6bcf836917ee53c26e4dac7900778/output/res/drawable-v21/design_bottom_navigation_item_background.xml"
     },
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
-        "source": "/home/victor/.android/build-cache/8d302559992629dda1c646de04b9adfd83d9f0b4/output/res/drawable-v21/abc_edit_text_material.xml"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/home/kazz/.android/build-cache/3116ca64b8702b327600c2afe229956fe4008e72/output/res/drawable-v21/abc_edit_text_material.xml"
     },
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-v21/avd_show_password.xml",
-        "source": "/home/victor/.android/build-cache/c1c88d24b89e37955d4b1362cdb66ceff3f4f4e6/output/res/drawable-v21/avd_show_password.xml"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-v21/design_password_eye.xml",
+        "source": "/home/kazz/.android/build-cache/42521d0d31b6bcf836917ee53c26e4dac7900778/output/res/drawable-v21/design_password_eye.xml"
     },
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-v21/design_password_eye.xml",
-        "source": "/home/victor/.android/build-cache/c1c88d24b89e37955d4b1362cdb66ceff3f4f4e6/output/res/drawable-v21/design_password_eye.xml"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "source": "/home/kazz/.android/build-cache/3116ca64b8702b327600c2afe229956fe4008e72/output/res/drawable-v21/notification_action_background.xml"
     }
 ]

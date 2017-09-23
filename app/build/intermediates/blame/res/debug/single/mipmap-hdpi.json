@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
-        "source": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
+        "source": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher_round.png",
-        "source": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher_round.png",
+        "source": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     }
 ]

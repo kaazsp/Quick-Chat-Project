@@ -1,26 +1,26 @@
 [
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
-        "source": "/home/victor/.android/build-cache/8d302559992629dda1c646de04b9adfd83d9f0b4/output/res/layout-v11/notification_media_cancel_action.xml"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
+        "source": "/home/kazz/.android/build-cache/3116ca64b8702b327600c2afe229956fe4008e72/output/res/layout-v11/notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
-        "source": "/home/victor/.android/build-cache/8d302559992629dda1c646de04b9adfd83d9f0b4/output/res/layout-v11/notification_template_big_media_narrow.xml"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
+        "source": "/home/kazz/.android/build-cache/3116ca64b8702b327600c2afe229956fe4008e72/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
     },
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
-        "source": "/home/victor/.android/build-cache/8d302559992629dda1c646de04b9adfd83d9f0b4/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
+        "source": "/home/kazz/.android/build-cache/3116ca64b8702b327600c2afe229956fe4008e72/output/res/layout-v11/notification_media_cancel_action.xml"
     },
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
-        "source": "/home/victor/.android/build-cache/8d302559992629dda1c646de04b9adfd83d9f0b4/output/res/layout-v11/notification_template_big_media.xml"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
+        "source": "/home/kazz/.android/build-cache/3116ca64b8702b327600c2afe229956fe4008e72/output/res/layout-v11/notification_template_big_media_custom.xml"
     },
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
-        "source": "/home/victor/.android/build-cache/8d302559992629dda1c646de04b9adfd83d9f0b4/output/res/layout-v11/notification_media_action.xml"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
+        "source": "/home/kazz/.android/build-cache/3116ca64b8702b327600c2afe229956fe4008e72/output/res/layout-v11/notification_media_action.xml"
     },
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
-        "source": "/home/victor/.android/build-cache/8d302559992629dda1c646de04b9adfd83d9f0b4/output/res/layout-v11/notification_template_big_media_custom.xml"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
+        "source": "/home/kazz/.android/build-cache/3116ca64b8702b327600c2afe229956fe4008e72/output/res/layout-v11/notification_template_big_media.xml"
     }
 ]

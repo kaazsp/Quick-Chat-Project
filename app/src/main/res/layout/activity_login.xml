@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     tools:context="com.example.kazz.quick_chat_project.LoginActivity">
 
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="41dp"
+        android:layout_above="@+id/googleBtn"
+        android:layout_centerHorizontal="true" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/googleBtn"
@@ -17,5 +25,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true">
 
+
     </com.google.android.gms.common.SignInButton>
+
+
+
 </RelativeLayout>

@@ -1,14 +1,14 @@
 [
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_user.png",
-        "source": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/src/main/res/drawable-xxhdpi/ic_user.png"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_action_name.png",
+        "source": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/src/main/res/drawable-xxhdpi/ic_action_name.png"
     },
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_action_name.png",
-        "source": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/src/main/res/drawable-xxhdpi/ic_action_name.png"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_earth.png",
+        "source": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/src/main/res/drawable-xxhdpi/ic_earth.png"
     },
     {
-        "merged": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_earth.png",
-        "source": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/src/main/res/drawable-xxhdpi/ic_earth.png"
+        "merged": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_user.png",
+        "source": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/src/main/res/drawable-xxhdpi/ic_user.png"
     }
 ]

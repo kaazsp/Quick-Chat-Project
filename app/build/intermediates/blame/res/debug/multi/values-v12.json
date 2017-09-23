@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/victor/Área de Trabalho/Quick-Chat-Project/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v12/values-v12.xml",
+        "outputFile": "/home/kazz/AndroidStudioProjects/Quick-Chat-Project/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v12/values-v12.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 274
                 },
                 "from": {
-                    "file": "/home/victor/.android/build-cache/8d302559992629dda1c646de04b9adfd83d9f0b4/output/res/values-v12/values-v12.xml",
+                    "file": "/home/kazz/.android/build-cache/3116ca64b8702b327600c2afe229956fe4008e72/output/res/values-v12/values-v12.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -33,7 +33,7 @@
                     "endOffset": 474
                 },
                 "from": {
-                    "file": "/home/victor/.android/build-cache/8d302559992629dda1c646de04b9adfd83d9f0b4/output/res/values-v12/values-v12.xml",
+                    "file": "/home/kazz/.android/build-cache/3116ca64b8702b327600c2afe229956fe4008e72/output/res/values-v12/values-v12.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -53,7 +53,7 @@
                     "endOffset": 593
                 },
                 "from": {
-                    "file": "/home/victor/.android/build-cache/8d302559992629dda1c646de04b9adfd83d9f0b4/output/res/values-v12/values-v12.xml",
+                    "file": "/home/kazz/.android/build-cache/3116ca64b8702b327600c2afe229956fe4008e72/output/res/values-v12/values-v12.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -72,7 +72,7 @@
                     "endOffset": 688
                 },
                 "from": {
-                    "file": "/home/victor/.android/build-cache/8d302559992629dda1c646de04b9adfd83d9f0b4/output/res/values-v12/values-v12.xml",
+                    "file": "/home/kazz/.android/build-cache/3116ca64b8702b327600c2afe229956fe4008e72/output/res/values-v12/values-v12.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,

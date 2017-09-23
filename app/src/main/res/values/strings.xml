@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">Quick-Chat-Project</string>
+    <string name="app_name">Quick</string>
     <string name="action_settings">Settings</string>
     <string name="log_out">Log_out</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_login2">LoginActivity2</string>
+    <string name="facebook_app_id">127400687907735</string>
+    <string name="fb_login_protocol_scheme">fb127400687907735</string>
 </resources>
